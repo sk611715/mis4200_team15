@@ -21,13 +21,13 @@
     background-color: white;
 }
 
-    .navbar-inverse .navbar-nav > li > a {
-        color: #412D5E;
-    }
+.navbar-inverse .navbar-nav > li > a {
+    color: #412D5E;
+ }
 
-    .navbar-inverse .navbar-brand {
-        color: #412D5E;
-    }
+.navbar-inverse .navbar-brand {
+    color: #412D5E;
+}
 .navbar-brand {
     font-family: "Helvetica";
     font-weight: bold;
@@ -38,6 +38,15 @@
 }
 .navbar-inverse .navbar-brand:hover {
     color: #FFB612;
+}
+span.gold {
+    font-family: "Helvetica";
+    font-weight: bold;
+    font-size: 22px;
+    color: #FFB612;
+}
+.mytags {
+    display: inline-block;
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
