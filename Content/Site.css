@@ -16,6 +16,18 @@
     white-space: normal;
 }
 
+
+.navbar-inverse {
+    background-color: #FFFFFF;
+}
+
+    .navbar-inverse .navbar-nav > li > a {
+        color: #412D5E;
+    }
+
+    .navbar-inverse .navbar-brand {
+        color: #412D5E;
+    }
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
