@@ -31,11 +31,15 @@
 .navbar-brand {
     font-family: "Helvetica";
     font-weight: bold;
-    font-size: 18px;
+    font-size: 16px;
 }
 .navbar-inverse .navbar-nav > li > a:hover {
     color: #FFB612;
 }
+.navbar-inverse .navbar-brand:hover {
+    color: #FFB612;
+}
+
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
