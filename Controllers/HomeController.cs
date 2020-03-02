@@ -22,7 +22,14 @@ namespace mis4200_team15.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Contact Information.";
+
+            return View();
+        }
+
+        public ActionResult coreValues()
+        {
+            ViewBag.Message = "Centric Core Values.";
 
             return View();
         }
