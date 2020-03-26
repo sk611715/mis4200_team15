@@ -48,10 +48,10 @@ span.gold {
 .mytags {
     display: inline-block;
 }
+@media only screen and (max-width: 767px) {
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+    .professionalpicture {
+        max-width: 100%;
+        height: 250px;
+    }
 }
