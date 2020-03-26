@@ -3163,17 +3163,17 @@ fieldset[disabled] a.btn {
     border-color: #412D5E;
     font-weight: bold;
 }
-    .btn-default:focus,
-    .btn-default.focus {
+.btn-default:focus,
+.btn-default.focus {
         color: #412D5E;
         background-color: #FFB612;
         border-color: #FFB612;
-    }
-    .btn-default:hover {
+}
+.btn-default:hover {
         color: #412D5E;
         background-color: #FFB612;
         border-color: #FFB612;
-    }
+}
 .btn-default:active,
 .btn-default.active,
 .open > .dropdown-toggle.btn-default {

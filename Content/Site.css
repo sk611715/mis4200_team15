@@ -49,10 +49,6 @@ span.gold {
     display: inline-block;
 }
 
-btn.btn-default {
-    color: #FFB612;
-}
-
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,

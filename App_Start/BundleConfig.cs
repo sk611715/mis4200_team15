@@ -25,6 +25,7 @@ namespace mis4200_team15
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+            BundleTable.EnableOptimizations = false;
         }
     }
 }
