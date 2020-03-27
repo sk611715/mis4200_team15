@@ -6,8 +6,6 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using Microsoft.AspNet.Identity;
-using Microsoft.VisualBasic.ApplicationServices;
 using mis4200_team15.DAL;
 using mis4200_team15.Models;
 
@@ -20,21 +18,7 @@ namespace mis4200_team15.Controllers
         // GET: userDetails
         public ActionResult Index()
         {
-            if (User.Identity.IsAuthenticated)
-
-            {
-
-                return View(db.userDetails.ToList());
-
-            }
-
-            else
-
-            {
-
-                return View("NotAuthenticated");
-
-            }
+            return View(db.userDetails.ToList());
         }
 
         // GET: userDetails/Details/5
@@ -63,34 +47,14 @@ namespace mis4200_team15.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,firstName,lastName,PhoneNumber,Office,Position,hireDate,photo")] userDetails userDetails)
+        public ActionResult Create([Bind(Include = "ID,Email,firstName,lastName,PhoneNumber,Office,Position,hireDate,photo")] userDetails userDetails)
         {
             if (ModelState.IsValid)
             {
-                //userDetails.ID = Guid.NewGuid(); //original new GUID
-                Guid memberID; //create variable to hold GUID
-                Guid.TryParse(User.Identity.GetUserId(), out memberID);
-                userDetails.Email = User.Identity.Name;
-                userDetails.ID = memberID;
+                userDetails.ID = Guid.NewGuid();
                 db.userDetails.Add(userDetails);
-                //will throw an error if duplicate user
-                try
-
-                {
-
-                    db.SaveChanges();
-
-                    return RedirectToAction("Index");
-
-                }
-
-                catch (Exception)
-
-                {
-
-                    return View("DuplicateUser");
-
-                }
+                db.SaveChanges();
+                return RedirectToAction("Index");
             }
 
             return View(userDetails);
@@ -99,53 +63,16 @@ namespace mis4200_team15.Controllers
         // GET: userDetails/Edit/5
         public ActionResult Edit(Guid? id)
         {
-            //if (id == null)
-            //{
-            //  return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            //}
-            //userDetails userDetails = db.userDetails.Find(id);
-            //if (userDetails == null)
-            //{
-            //   return HttpNotFound();
-            //}
-            // return View(userDetails);
             if (id == null)
-
             {
-
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-
             }
-
             userDetails userDetails = db.userDetails.Find(id);
-
             if (userDetails == null)
-
             {
-
                 return HttpNotFound();
-
             }
-
-            Guid memberID;
-
-            Guid.TryParse(User.Identity.GetUserId(), out memberID);
-
-            if (userDetails.ID == memberID)
-
-            {
-
-                return View(userDetails);
-
-            }
-
-            else
-
-            {
-
-                return View("NotAuthenticated");
-
-            }
+            return View(userDetails);
         }
 
         // POST: userDetails/Edit/5

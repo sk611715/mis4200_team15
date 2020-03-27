@@ -19,7 +19,6 @@ namespace mis4200_team15.Migrations
                         Office = c.String(),
                         Position = c.String(),
                         hireDate = c.DateTime(nullable: false),
-                        photo = c.String(),
                     })
                 .PrimaryKey(t => t.ID);
             

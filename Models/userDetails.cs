@@ -52,7 +52,5 @@ namespace mis4200_team15.Models
 
         public DateTime hireDate { get; set; }
 
-        public string photo { get; set; }
-
     }
 }

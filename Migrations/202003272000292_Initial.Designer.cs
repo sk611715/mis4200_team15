@@ -13,7 +13,7 @@ namespace mis4200_team15.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202003271917487_Initial"; }
+            get { return "202003272000292_Initial"; }
         }
         
         string IMigrationMetadata.Source

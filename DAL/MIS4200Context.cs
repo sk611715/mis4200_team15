@@ -29,6 +29,5 @@ namespace mis4200_team15.DAL
 
         public DbSet<userDetails> userDetails { get; set; }
 
-
     }
 }
