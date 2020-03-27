@@ -9,6 +9,8 @@
     padding-right: 15px;
 }
 
+
+
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */
@@ -46,11 +48,14 @@ span.gold {
     color: #FFB612;
 }
 
-.centerimage {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
+.full-width {
+    left: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    max-width: 100vw;
+    position: relative;
+    right: 50%;
+    width: 100vw;
 }
 
 .mytags {
