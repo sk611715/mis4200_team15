@@ -169,9 +169,12 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\coreValuesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LocationsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\userDetailsController.cs" />
+    <Compile Include="Controllers\UserValuesController.cs" />
     <Compile Include="DAL\MIS4200Context.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -180,12 +183,22 @@
     <Compile Include="Migrations\202003272000292_Initial.Designer.cs">
       <DependentUpon>202003272000292_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003272155350_Users.cs" />
+    <Compile Include="Migrations\202003272155350_Users.Designer.cs">
+      <DependentUpon>202003272155350_Users.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003272219064_Locations, coreValues, UserValues.cs" />
+    <Compile Include="Migrations\202003272219064_Locations, coreValues, UserValues.Designer.cs">
+      <DependentUpon>202003272219064_Locations, coreValues, UserValues.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\coreValues.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Locations.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\userDetails.cs" />
+    <Compile Include="Models\UserValues.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -254,6 +267,21 @@
     <Content Include="Views\userDetails\DuplicateUser.cshtml" />
     <Content Include="Views\userDetails\NotAuthenticated.cshtml" />
     <Content Include="Views\Home\coreValues.cshtml" />
+    <Content Include="Views\Locations\Create.cshtml" />
+    <Content Include="Views\Locations\Delete.cshtml" />
+    <Content Include="Views\Locations\Details.cshtml" />
+    <Content Include="Views\Locations\Edit.cshtml" />
+    <Content Include="Views\Locations\Index.cshtml" />
+    <Content Include="Views\coreValues\Create.cshtml" />
+    <Content Include="Views\coreValues\Delete.cshtml" />
+    <Content Include="Views\coreValues\Details.cshtml" />
+    <Content Include="Views\coreValues\Edit.cshtml" />
+    <Content Include="Views\coreValues\Index.cshtml" />
+    <Content Include="Views\UserValues\Create.cshtml" />
+    <Content Include="Views\UserValues\Delete.cshtml" />
+    <Content Include="Views\UserValues\Details.cshtml" />
+    <Content Include="Views\UserValues\Edit.cshtml" />
+    <Content Include="Views\UserValues\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -274,6 +302,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202003272000292_Initial.resx">
       <DependentUpon>202003272000292_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003272155350_Users.resx">
+      <DependentUpon>202003272155350_Users.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003272219064_Locations, coreValues, UserValues.resx">
+      <DependentUpon>202003272219064_Locations, coreValues, UserValues.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

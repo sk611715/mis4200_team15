@@ -11,5 +11,12 @@ namespace mis4200_team15.Models
     {
         [Key]
         public int coreValuesID { get;  set; }
+        [Display(Name ="Core Value")]
+        public string valueName { get; set; }
+        [Display(Name ="Description")]
+        public string description { get; set; }
+        [Display(Name ="Points")]
+        public int points { get; set; }
+        public ICollection<UserValues> UserValues { get; set; }
     }
 }

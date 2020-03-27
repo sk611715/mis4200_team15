@@ -1,0 +1,42 @@
+﻿@model mis4200_team15.Models.UserValues
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>UserValues</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.valueID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.valueID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dateAssigned)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dateAssigned)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.userValueID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

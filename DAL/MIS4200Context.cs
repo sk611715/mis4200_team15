@@ -29,5 +29,10 @@ namespace mis4200_team15.DAL
 
         public DbSet<userDetails> userDetails { get; set; }
 
+        public System.Data.Entity.DbSet<mis4200_team15.Models.Locations> Locations { get; set; }
+
+        public System.Data.Entity.DbSet<mis4200_team15.Models.coreValues> coreValues { get; set; }
+
+        public System.Data.Entity.DbSet<mis4200_team15.Models.UserValues> UserValues { get; set; }
     }
 }
