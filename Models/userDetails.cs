@@ -8,11 +8,11 @@ namespace mis4200_team15.Models
 {
     public class userDetails
     {
+        internal object businessUnits;
+
         [Required]
 
         public Guid ID { get; set; }
-
-       
 
         [EmailAddress]
 
@@ -51,6 +51,17 @@ namespace mis4200_team15.Models
         [DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true)]
 
         public DateTime hireDate { get; set; }
+
+        [Display(Name = "Location")]
+        [Required(ErrorMessage = "Location is required")]
+        public int locationsID { get; set; }
+        public virtual Locations Locations { get; set; }
+        public string fullLocation { get { return Locations.city + ", " + Locations.state; } }
+
+        [Display(Name = "Business Unit")]
+        [Required(ErrorMessage = "Business Unit is required")]
+        public int businessUnitsID { get; set; }
+        public virtual businessUnits businessUnit { get; set; }
 
     }
 }

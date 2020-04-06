@@ -10,6 +10,7 @@ namespace mis4200_team15.DAL
     public class MIS4200Context : DbContext // inherits from DbContext
 
     {
+        internal object businessUnitsId;
 
         public MIS4200Context() : base("name=DefaultConnection")
 
@@ -34,5 +35,7 @@ namespace mis4200_team15.DAL
         public System.Data.Entity.DbSet<mis4200_team15.Models.coreValues> coreValues { get; set; }
 
         public System.Data.Entity.DbSet<mis4200_team15.Models.UserValues> UserValues { get; set; }
+
+        public System.Data.Entity.DbSet<mis4200_team15.Models.businessUnits> businessUnits { get; set; }
     }
 }

@@ -14,6 +14,7 @@ namespace mis4200_team15.Models
         public string city { get; set; }
         [Display(Name ="State")]
         public string state { get; set; }
+        public string fullLocation => city + ", " + state;
         public ICollection<userDetails> userDetails { get; set; }
     }
 }

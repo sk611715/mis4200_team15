@@ -18,6 +18,7 @@ namespace mis4200_team15.Controllers
         // GET: userDetails
         public ActionResult Index()
         {
+            var userDetails = db.userDetails.Include(a => a.businessUnits).Include(a => a.Locations);
             return View(db.userDetails.ToList());
         }
 
@@ -39,6 +40,8 @@ namespace mis4200_team15.Controllers
         // GET: userDetails/Create
         public ActionResult Create()
         {
+            ViewBag.businessUnitsID = new SelectList(db.businessUnits, "businessUnitsID", "Unit");
+            ViewBag.locationsID = new SelectList(db.Locations, "locationsID", "fullLocation");
             return View();
         }
 
