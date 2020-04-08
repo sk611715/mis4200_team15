@@ -6,6 +6,8 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
+
 using mis4200_team15.DAL;
 using mis4200_team15.Models;
 
@@ -50,14 +52,27 @@ namespace mis4200_team15.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Email,firstName,lastName,PhoneNumber,Office,Position,hireDate,photo")] userDetails userDetails)
+        public ActionResult Create([Bind(Include = "ID,firstName,lastName,PhoneNumber,Office,Position,hireDate,photo")] userDetails userDetails)
         {
             if (ModelState.IsValid)
             {
-                userDetails.ID = Guid.NewGuid();
+                Guid memberId; //create variable to hold the GUID
+                //userDetails.ID = Guid.NewGuid();
+                Guid.TryParse(User.Identity.GetUserId(), out memberId);
+                userDetails.ID = memberId;
                 db.userDetails.Add(userDetails);
-                db.SaveChanges();
+                try 
+	{	        
+		 db.SaveChanges();
                 return RedirectToAction("Index");
+	}
+	catch (Exception)
+	{
+return View("DuplicateUser");
+		
+	}
+                
+              
             }
 
             return View(userDetails);
@@ -67,15 +82,48 @@ namespace mis4200_team15.Controllers
         public ActionResult Edit(Guid? id)
         {
             if (id == null)
+
             {
+
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+
             }
+
             userDetails userDetails = db.userDetails.Find(id);
+
             if (userDetails == null)
+
             {
+
                 return HttpNotFound();
+
             }
-            return View(userDetails);
+
+            Guid memberID;
+
+            Guid.TryParse(User.Identity.GetUserId(), out memberID);
+
+            if (userDetails.ID == memberID)
+
+            {
+
+                return View(userDetails);
+
+            }
+
+            else
+
+            {
+
+                return View("NotAuthenticated");
+
+            }
+            //userDetails userDetails = db.userDetails.Find(id);
+           // if (userDetails == null)
+           // {
+            //    return HttpNotFound();
+           // }
+            //return View(userDetails);
         }
 
         // POST: userDetails/Edit/5
