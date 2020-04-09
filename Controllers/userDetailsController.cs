@@ -52,7 +52,7 @@ namespace mis4200_team15.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "")] userDetails userDetails)
+        public ActionResult Create([Bind(Include = "ID,firstName,lastName,PhoneNumber,businessUnitsID,locationsID,hireDate")] userDetails userDetails)
         {
             if (ModelState.IsValid)
             {
@@ -131,7 +131,7 @@ return View("DuplicateUser");
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Email,firstName,lastName,PhoneNumber,Office,Position,hireDate,photo")] userDetails userDetails)
+        public ActionResult Edit([Bind(Include = "ID,firstName,lastName,PhoneNumber,businessUnitsID,locationsID,hireDate")] userDetails userDetails)
         {
             if (ModelState.IsValid)
             {
@@ -139,6 +139,8 @@ return View("DuplicateUser");
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.businessUnitsID = new SelectList(db.businessUnits, "businessUnitsID", "Unit", userDetails.businessUnitsID);
+            ViewBag.locationsID = new SelectList(db.Locations, "locationsID", "fullLocation", userDetails.locationsID);
             return View(userDetails);
         }
 
