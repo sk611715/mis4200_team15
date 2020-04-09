@@ -52,7 +52,7 @@ namespace mis4200_team15.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,firstName,lastName,PhoneNumber,Office,Position,hireDate,photo")] userDetails userDetails)
+        public ActionResult Create([Bind(Include = "")] userDetails userDetails)
         {
             if (ModelState.IsValid)
             {

@@ -10,6 +10,7 @@ namespace mis4200_team15.Models
     {
         [Key]
         public int businessUnitsID { get; set; }
+        [Display(Name = "Business Unit")]
         public string Unit { get; set; }
         [Display(Name = "Business Unit")]
         public ICollection<userDetails> userDetails { get; set; }

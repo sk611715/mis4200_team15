@@ -8,8 +8,7 @@ namespace mis4200_team15.Models
 {
     public class userDetails
     {
-        internal object businessUnits;
-
+      
         [Required]
 
         public Guid ID { get; set; }
@@ -48,7 +47,7 @@ namespace mis4200_team15.Models
 
         [Display(Name = "Hire Date")]
 
-        public DateTime hireDate { get; set; }
+        public DateTime? hireDate { get; set; }
 
         [Display(Name = "Location")]
         [Required(ErrorMessage = "Location is required")]
@@ -59,7 +58,7 @@ namespace mis4200_team15.Models
         [Display(Name = "Business Unit")]
         [Required(ErrorMessage = "Business Unit is required")]
         public int businessUnitsID { get; set; }
-        public virtual businessUnits businessUnit { get; set; }
+        public virtual businessUnits businessUnits { get; set; }
 
     }
 }
