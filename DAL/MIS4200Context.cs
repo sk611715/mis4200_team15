@@ -37,5 +37,6 @@ namespace mis4200_team15.DAL
         public System.Data.Entity.DbSet<mis4200_team15.Models.UserValues> UserValues { get; set; }
 
         public System.Data.Entity.DbSet<mis4200_team15.Models.businessUnits> businessUnits { get; set; }
+
     }
 }

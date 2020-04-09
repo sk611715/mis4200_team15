@@ -192,6 +192,7 @@
       <DependentUpon>202003272219064_Locations, coreValues, UserValues.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="modelBuilder\Properties.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\businessUnits.cs" />
     <Compile Include="Models\coreValues.cs" />
