@@ -35,6 +35,8 @@ namespace mis4200_team15.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.businessUnitsID = new SelectList(db.businessUnits, "businessUnitsID", "Unit");
+            ViewBag.locationsID = new SelectList(db.Locations, "locationsID", "fullLocation");
             return View(userDetails);
         }
 
@@ -75,7 +77,8 @@ return View("DuplicateUser");
                 
               
             }
-
+            ViewBag.businessUnitsID = new SelectList(db.businessUnits, "businessUnitsID", "Unit");
+            ViewBag.locationsID = new SelectList(db.Locations, "locationsID", "fullLocation");
             return View(userDetails);
         }
 
@@ -157,6 +160,8 @@ return View("DuplicateUser");
             {
                 return HttpNotFound();
             }
+            ViewBag.businessUnitsID = new SelectList(db.businessUnits, "businessUnitsID", "Unit");
+            ViewBag.locationsID = new SelectList(db.Locations, "locationsID", "fullLocation");
             return View(userDetails);
         }
 
