@@ -42,13 +42,19 @@
             @Html.DisplayFor(model => model.PhoneNumber)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Position)
+            @Html.DisplayNameFor(model => model.businessUnits.Unit)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Position)
+            @Html.DisplayFor(model => model.businessUnits.Unit)
         </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Locations.fullLocation)
+        </dt>
 
+        <dd>
+            @Html.DisplayFor(model => model.Locations.fullLocation)
+        </dd>
         <dt>
             @Html.DisplayNameFor(model => model.hireDate)
         </dt>
