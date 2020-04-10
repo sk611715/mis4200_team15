@@ -46,7 +46,8 @@ namespace mis4200_team15.Models
         public string Position { get; set; }
 
         [Display(Name = "Hire Date")]
-
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true)]
         public DateTime? hireDate { get; set; }
 
         [Display(Name = "Location")]
