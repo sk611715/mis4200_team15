@@ -7,7 +7,6 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
-
 using mis4200_team15.DAL;
 using mis4200_team15.Models;
 
@@ -63,8 +62,10 @@ namespace mis4200_team15.Controllers
                 db.userDetails.Add(userDetails);
                 try 
 	{	        
-		 db.SaveChanges();
-                return RedirectToAction("Index");
+		            db.SaveChanges();
+                    ViewBag.businessUnitsID = new SelectList(db.businessUnits, "businessUnitsID", "Unit", userDetails.businessUnitsID);
+                    ViewBag.locationsID = new SelectList(db.Locations, "locationsID", "fullLocation", userDetails.locationsID);
+                    return RedirectToAction("Index");
 	}
 	catch (Exception)
 	{
@@ -106,7 +107,8 @@ return View("DuplicateUser");
             if (userDetails.ID == memberID)
 
             {
-
+                ViewBag.businessUnitsID = new SelectList(db.businessUnits, "businessUnitsID", "Unit", userDetails.businessUnitsID);
+                ViewBag.locationsID = new SelectList(db.Locations, "locationsID", "fullLocation", userDetails.locationsID);
                 return View(userDetails);
 
             }
@@ -114,7 +116,6 @@ return View("DuplicateUser");
             else
 
             {
-
                 return View("NotAuthenticated");
 
             }

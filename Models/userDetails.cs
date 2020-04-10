@@ -37,14 +37,6 @@ namespace mis4200_team15.Models
 
         public string PhoneNumber { get; set; }
 
-        [Display(Name = "Office")]
-
-        public string Office { get; set; }
-
-        [Display(Name = "Current position")]
-
-        public string Position { get; set; }
-
         [Display(Name = "Hire Date")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true)]
