@@ -13,6 +13,7 @@ namespace mis4200_team15.Models
 
         public Guid ID { get; set; }
 
+        [Required]
         [EmailAddress]
 
         [Display(Name = "Email")]
@@ -31,25 +32,29 @@ namespace mis4200_team15.Models
 
         public string lastName { get; set; }
 
+        [Required]
+
         [Display(Name = "Primary Phone")]
 
         [Phone]
 
         public string PhoneNumber { get; set; }
 
+        [Required]
+
         [Display(Name = "Hire Date")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true)]
         public DateTime? hireDate { get; set; }
 
+        [Required]
         [Display(Name = "Location")]
-        [Required(ErrorMessage = "Location is required")]
         public int locationsID { get; set; }
         public virtual Locations Locations { get; set; }
         public string fullLocation { get { return Locations.city + ", " + Locations.state; } }
 
+        [Required]
         [Display(Name = "Business Unit")]
-        [Required(ErrorMessage = "Business Unit is required")]
         public int businessUnitsID { get; set; }
         public virtual businessUnits businessUnits { get; set; }
 
