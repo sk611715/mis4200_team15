@@ -58,5 +58,7 @@ namespace mis4200_team15.Models
         public int businessUnitsID { get; set; }
         public virtual businessUnits businessUnits { get; set; }
 
+        public string fullUserName => lastName + ", " + firstName;
+
     }
 }

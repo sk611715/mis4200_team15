@@ -173,6 +173,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LocationsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RecognitionsController.cs" />
     <Compile Include="Controllers\userDetailsController.cs" />
     <Compile Include="Controllers\UserValuesController.cs" />
     <Compile Include="DAL\MIS4200Context.cs" />
@@ -195,6 +196,7 @@
     <Compile Include="modelBuilder\Properties.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\businessUnits.cs" />
+    <Compile Include="Models\Recognitions.cs" />
     <Compile Include="Models\coreValues.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Locations.cs" />
@@ -327,6 +329,11 @@
     <Content Include="Views\UserValues\Details.cshtml" />
     <Content Include="Views\UserValues\Edit.cshtml" />
     <Content Include="Views\UserValues\Index.cshtml" />
+    <Content Include="Views\Recognitions\Create.cshtml" />
+    <Content Include="Views\Recognitions\Delete.cshtml" />
+    <Content Include="Views\Recognitions\Details.cshtml" />
+    <Content Include="Views\Recognitions\Edit.cshtml" />
+    <Content Include="Views\Recognitions\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
