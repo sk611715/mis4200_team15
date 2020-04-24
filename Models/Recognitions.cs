@@ -15,7 +15,7 @@ namespace mis4200_team15.Models
         [Required]
         [Display(Name = "Name of Employee")]
 
-        public int userDetailsID { get; set; }
+        public int ID { get; set; }
         public virtual userDetails userDetails { get; set; }
         public string fullUserName { get { return userDetails.lastName + ", " + userDetails.firstName; } }
 
