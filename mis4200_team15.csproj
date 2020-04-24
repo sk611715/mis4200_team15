@@ -173,24 +173,15 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LocationsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\RecognitionsController.cs" />
     <Compile Include="Controllers\userDetailsController.cs" />
     <Compile Include="Controllers\UserValuesController.cs" />
     <Compile Include="DAL\MIS4200Context.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202003272000292_Initial.cs" />
-    <Compile Include="Migrations\202003272000292_Initial.Designer.cs">
-      <DependentUpon>202003272000292_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202003272155350_Users.cs" />
-    <Compile Include="Migrations\202003272155350_Users.Designer.cs">
-      <DependentUpon>202003272155350_Users.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202003272219064_Locations, coreValues, UserValues.cs" />
-    <Compile Include="Migrations\202003272219064_Locations, coreValues, UserValues.Designer.cs">
-      <DependentUpon>202003272219064_Locations, coreValues, UserValues.cs</DependentUpon>
+    <Compile Include="Migrations\202004240016169_fs.cs" />
+    <Compile Include="Migrations\202004240016169_fs.Designer.cs">
+      <DependentUpon>202004240016169_fs.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="modelBuilder\Properties.cs" />
@@ -329,11 +320,6 @@
     <Content Include="Views\UserValues\Details.cshtml" />
     <Content Include="Views\UserValues\Edit.cshtml" />
     <Content Include="Views\UserValues\Index.cshtml" />
-    <Content Include="Views\Recognitions\Create.cshtml" />
-    <Content Include="Views\Recognitions\Delete.cshtml" />
-    <Content Include="Views\Recognitions\Details.cshtml" />
-    <Content Include="Views\Recognitions\Edit.cshtml" />
-    <Content Include="Views\Recognitions\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -352,14 +338,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202003272000292_Initial.resx">
-      <DependentUpon>202003272000292_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202003272155350_Users.resx">
-      <DependentUpon>202003272155350_Users.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202003272219064_Locations, coreValues, UserValues.resx">
-      <DependentUpon>202003272219064_Locations, coreValues, UserValues.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202004240016169_fs.resx">
+      <DependentUpon>202004240016169_fs.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

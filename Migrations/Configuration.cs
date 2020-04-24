@@ -9,7 +9,7 @@ namespace mis4200_team15.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(mis4200_team15.DAL.MIS4200Context context)
