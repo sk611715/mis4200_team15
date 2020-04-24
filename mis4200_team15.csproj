@@ -188,6 +188,10 @@
     <Compile Include="Migrations\202004240113211_recognitions.Designer.cs">
       <DependentUpon>202004240113211_recognitions.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004240138054_recog.cs" />
+    <Compile Include="Migrations\202004240138054_recog.Designer.cs">
+      <DependentUpon>202004240138054_recog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="modelBuilder\Properties.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -353,6 +357,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004240113211_recognitions.resx">
       <DependentUpon>202004240113211_recognitions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004240138054_recog.resx">
+      <DependentUpon>202004240138054_recog.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
