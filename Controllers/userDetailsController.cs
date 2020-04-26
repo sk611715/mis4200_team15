@@ -19,8 +19,16 @@ namespace mis4200_team15.Controllers
         // GET: userDetails
         public ActionResult Index()
         {
-            var userDetails = db.userDetails.Include(a => a.businessUnits).Include(a => a.Locations);
-            return View(db.userDetails.ToList());
+            if (User.Identity.IsAuthenticated)
+            {
+                var userDetails = db.userDetails.Include(a => a.businessUnits).Include(a => a.Locations);
+                return View(db.userDetails.ToList());
+            }
+            else
+            {
+                return View("NotAuthenticated");
+
+            }
         }
 
         // GET: userDetails/Details/5
@@ -152,17 +160,41 @@ return View("DuplicateUser");
         public ActionResult Delete(Guid? id)
         {
             if (id == null)
+
             {
+
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+
             }
+
             userDetails userDetails = db.userDetails.Find(id);
+
             if (userDetails == null)
+
             {
+
                 return HttpNotFound();
+
             }
-            ViewBag.businessUnitsID = new SelectList(db.businessUnits, "businessUnitsID", "Unit");
-            ViewBag.locationsID = new SelectList(db.Locations, "locationsID", "fullLocation");
-            return View(userDetails);
+
+            Guid memberID;
+
+            Guid.TryParse(User.Identity.GetUserId(), out memberID);
+
+            if (userDetails.ID == memberID)
+
+            {
+                ViewBag.businessUnitsID = new SelectList(db.businessUnits, "businessUnitsID", "Unit");
+                ViewBag.locationsID = new SelectList(db.Locations, "locationsID", "fullLocation");
+                return View(userDetails);
+            }
+            else
+
+            {
+                return View("NotAuthenticated");
+
+            }
+
         }
 
         // POST: userDetails/Delete/5

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
 using mis4200_team15.DAL;
 using mis4200_team15.Models;
 
@@ -18,8 +19,15 @@ namespace mis4200_team15.Controllers
         // GET: Recognitions
         public ActionResult Index()
         {
-            var recognitions = db.Recognitions.Include(r => r.coreValues).Include(r => r.userDetails);
-            return View(recognitions.ToList());
+            if (User.Identity.IsAuthenticated)
+            {
+                var recognitions = db.Recognitions.Include(r => r.coreValues).Include(r => r.userDetails);
+                return View(recognitions.ToList());
+            }
+            else
+            {
+                return View("NotAuthenticated");
+            }
         }
 
         // GET: Recognitions/Details/5
@@ -40,8 +48,20 @@ namespace mis4200_team15.Controllers
         // GET: Recognitions/Create
         public ActionResult Create()
         {
+            
             ViewBag.coreValuesID = new SelectList(db.coreValues, "coreValuesID", "valueName");
-            ViewBag.ID = new SelectList(db.userDetails, "ID", "fullUserName");
+
+            string empID = User.Identity.GetUserId();
+            SelectList employees = new SelectList(db.userDetails, "ID", "fullUserName");
+            employees = new SelectList(employees.Where(x => x.Value != empID).ToList(), "Value", "Text");
+            ViewBag.ID = employees;
+
+
+
+            // ViewBag.ID = new SelectList(db.userDetails, "ID", "fullUserName");
+            // ViewBag.ID = new SelectList(.Where(x => x.Value != empID).ToList(), "Value", "Text");
+
+
             return View();
         }
 
